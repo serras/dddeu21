@@ -20,6 +20,10 @@ count: false
 
 ## Alejandro Serrano @ DDD Europe 2021
 
+--
+
+> serras.github.io/dddeu21
+
 ---
 
 # 🥅 Our goal
@@ -50,7 +54,7 @@ Alloy is a modelling language
 Electrum extends Alloy with temporal logic
 
 - simpler ways to specify changes of state
-- currently 2.1, built on top of Alloy 5.1
+- currently 2.1.3, built on top of Alloy 5.1
 --
 
 
@@ -76,7 +80,7 @@ Electrum is going to become Alloy 6
 3. Run the Jar you've downloaded
 
     ```scala
-    java -jar electrum-2.1.jar
+    java -jar electrum-2.1.3.jar
     ```
 ]
 
@@ -124,6 +128,8 @@ class: center, middle, title-slide
 ???
 'Next' loops over instances
 
+Just point to this in the window
+
 Teacher overlaps with students
 
 Maybe no students
@@ -169,6 +175,16 @@ Then talk about some / set / lone
 Introduce the invariant about teacher not a student `no t: teacher | t in students`
 
 And then rewrite to `no teacher & students`
+
+```scala
+sig Person { }
+sig Course {
+  teacher  : Person,
+  students : some Person
+} {
+  no teacher & students
+}
+```
 
 ---
 
@@ -318,6 +334,14 @@ Introduce the concept of assertion
 Explain `check` to find a counterexample
 
 Talk about `for` as a way to measure effort
+
+```scala
+assert NoTeacherIsStudent {
+  all c1 : Course | no c2 : Course | c1.teacher in c2.students
+}
+
+check NoTeacherIsStudent for 3
+```
 
 ---
 
@@ -478,6 +502,21 @@ Introduce how to open a module
 Explain that you cannot have "global" properties
 
 Introduce enum
+
+```scala
+open util/integer
+
+one sig Product {
+  available: Int
+}
+
+enum Status { Open, CheckedOut }
+
+sig Cart {
+  status: Status,
+  amount: Int
+}
+```
 
 ---
 

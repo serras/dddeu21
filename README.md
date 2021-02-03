@@ -6,3 +6,7 @@
 
 1. Download the latest Jar from Electrum's [release page](https://github.com/haslab/Electrum2/releases) (2.1 at the moment of writing).
 2. Ensure that you can execute it by either double clicking on the downloaded file or running `java -jar yourelectrum.jar` from a terminal.
+
+## [Slides](serras.github.io/dddeu21/slides)
+
+## [Examples](serras.github.io/dddeu21/examples)

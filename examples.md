@@ -71,7 +71,7 @@ sig Cart {
 
 ## There's more!
 
-## Relations
+## Relations
 
 ```scala
 sig Person { }
