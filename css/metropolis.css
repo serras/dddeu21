@@ -92,6 +92,10 @@ position: absolute;
   line-height: 1;
 }
 
+.grey {
+  color: grey;
+}
+
 .title-slide {
   background-color: #FAFAFA;
   border-top: 80px solid #FAFAFA;
